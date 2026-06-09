@@ -33,6 +33,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* --- Hero carousel --- */
+  const slides = document.querySelectorAll('.hero__slide');
+  const dots   = document.querySelectorAll('.hero__dot');
+
+  if (slides.length > 0) {
+    let current = 0;
+
+    function goTo(index) {
+      slides[current].classList.remove('active');
+      dots[current]?.classList.remove('active');
+      current = index;
+      slides[current].classList.add('active');
+      dots[current]?.classList.add('active');
+    }
+
+    // Auto-advance every 5s
+    let timer = setInterval(() => {
+      goTo((current + 1) % slides.length);
+    }, 5000);
+
+    // Dot click
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        clearInterval(timer);
+        goTo(i);
+        timer = setInterval(() => {
+          goTo((current + 1) % slides.length);
+        }, 5000);
+      });
+    });
+  }
+
   /* --- Active nav link --- */
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav__links a, .nav__dropdown-menu a').forEach(link => {
