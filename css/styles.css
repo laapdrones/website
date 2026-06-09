@@ -260,13 +260,13 @@ a   { color: inherit; text-decoration: none; }
 
 /* Big title */
 .hero__title {
-  font-size: clamp(56px, 8.5vw, 136px);
+  font-size: clamp(48px, 7vw, 108px);
   font-weight: 500;
-  line-height: 0.94;
-  letter-spacing: -3.5px;
+  line-height: 1.08;
+  letter-spacing: -2.5px;
   color: var(--black);
   margin-bottom: 28px;
-  max-width: 1200px;
+  max-width: 1300px;
 }
 
 /* Subtitle */
@@ -284,16 +284,20 @@ a   { color: inherit; text-decoration: none; }
   gap: 24px; flex-wrap: wrap;
 }
 
-/* Text link in hero */
+/* Secondary CTA in hero — outlined */
 .hero__link {
-  font-family: 'Courier New', monospace;
-  font-size: 12px; font-weight: 400;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: rgba(0,0,0,0.5);
+  font-family: var(--font);
+  font-size: 15px; font-weight: 600;
+  letter-spacing: 0;
+  color: var(--black);
   display: inline-flex; align-items: center; gap: 6px;
-  transition: color 0.15s;
+  border: 1.5px solid var(--black);
+  padding: 13px 24px;
+  border-radius: 4px;
+  line-height: 1;
+  transition: background 0.15s, color 0.15s;
 }
-.hero__link:hover { color: var(--black); }
+.hero__link:hover { background: var(--black); color: var(--white); }
 
 /* Bottom technical line */
 .hero__techline {
@@ -336,11 +340,14 @@ a   { color: inherit; text-decoration: none; }
   font-family: 'Courier New', monospace;
   font-size: 10px; font-weight: 400;
   letter-spacing: 0.12em; text-transform: uppercase;
-  color: rgba(0,0,0,0.4);
+  color: rgba(0,0,0,0.65);
   display: inline-flex; align-items: center; gap: 6px;
-  transition: color 0.15s;
+  border: 1px solid rgba(0,0,0,0.25);
+  padding: 5px 10px;
+  border-radius: 2px;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
 }
-.hero__real-link:hover { color: var(--black); }
+.hero__real-link:hover { color: var(--black); border-color: var(--black); background: var(--accent); }
 
 .hero__real-scroll {
   display: flex;
@@ -779,13 +786,17 @@ a   { color: inherit; text-decoration: none; }
 }
 
 /* =============================================
-   CONTACT SECTION
+   CONTACT SECTION — technical/map style
    ============================================= */
 
 .contact-section {
-  padding: 96px 0;
+  padding: 80px 0;
   background: var(--white);
-  border-top: 1px solid var(--border);
+  background-image:
+    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  border-top: 1.5px solid var(--black);
 }
 
 .contact-section__inner {
@@ -804,26 +815,31 @@ a   { color: inherit; text-decoration: none; }
 }
 
 .contact-section__sub {
-  font-size: 15px; line-height: 1.7;
-  color: var(--gray); margin-bottom: 40px;
+  font-size: 14px; line-height: 1.75;
+  color: var(--gray); margin-bottom: 32px;
 }
 
-.contact-details { display: flex; flex-direction: column; gap: 6px; }
+.contact-details { display: flex; flex-direction: column; gap: 0; }
 
 .contact-detail-item {
-  font-size: 15px; color: var(--black);
-  opacity: 0.65; transition: opacity 0.15s;
+  font-family: 'Courier New', monospace;
+  font-size: 12px; letter-spacing: 0.06em;
+  color: var(--black); opacity: 0.6;
+  transition: opacity 0.15s;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
 }
 .contact-detail-item:hover { opacity: 1; }
 
 .contact-detail-social {
-  display: flex; flex-direction: column; gap: 3px; margin-top: 14px;
+  display: flex; gap: 16px; flex-wrap: wrap; margin-top: 14px;
 }
 .contact-detail-social a {
-  font-size: 14px; color: var(--black);
-  opacity: 0.4; transition: opacity 0.15s;
+  font-family: 'Courier New', monospace;
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--black); opacity: 0.4; transition: opacity 0.15s;
 }
-.contact-detail-social a:hover { opacity: 0.9; }
+.contact-detail-social a:hover { opacity: 1; }
 
 /* Form */
 .contact-form { display: flex; flex-direction: column; gap: 22px; }
@@ -832,14 +848,15 @@ a   { color: inherit; text-decoration: none; }
 
 .service-chip {
   display: inline-flex; align-items: center;
-  padding: 8px 16px;
-  border: 1.5px solid rgba(0,0,0,0.15);
-  border-radius: 100px;
-  font-family: var(--font);
-  font-size: 13px; font-weight: 500;
+  padding: 7px 14px;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 2px;
+  font-family: 'Courier New', monospace;
+  font-size: 10px; font-weight: 400;
+  letter-spacing: 0.1em; text-transform: uppercase;
   cursor: pointer; user-select: none;
   transition: border-color 0.15s, background 0.15s, color 0.15s;
-  background: transparent; color: var(--black);
+  background: transparent; color: rgba(0,0,0,0.6);
 }
 .service-chip input[type="checkbox"] { display: none; }
 .service-chip:has(input:checked) {
@@ -852,17 +869,18 @@ a   { color: inherit; text-decoration: none; }
 .form-field { display: flex; flex-direction: column; gap: 8px; }
 
 .form-field label {
-  font-size: 11px; font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  color: rgba(0,0,0,0.35);
+  font-family: 'Courier New', monospace;
+  font-size: 9px; font-weight: 400;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(0,0,0,0.38);
 }
 
-.form-optional { font-weight: 400; opacity: 0.6; text-transform: none; letter-spacing: 0; }
+.form-optional { opacity: 0.55; }
 
 .form-field input,
 .form-field textarea {
   font-family: var(--font);
-  font-size: 16px; color: var(--black);
+  font-size: 15px; color: var(--black);
   background: transparent; border: none;
   border-bottom: 1px solid rgba(0,0,0,0.15);
   border-radius: 0; padding: 10px 0; outline: none;
@@ -874,10 +892,12 @@ a   { color: inherit; text-decoration: none; }
 
 .form-consent {
   display: flex; align-items: flex-start; gap: 10px;
-  font-size: 12px; line-height: 1.5; color: rgba(0,0,0,0.4);
+  font-family: 'Courier New', monospace;
+  font-size: 10px; line-height: 1.6; color: rgba(0,0,0,0.38);
+  letter-spacing: 0.04em;
 }
 .form-consent input[type="checkbox"] {
-  width: 14px; height: 14px; flex-shrink: 0;
+  width: 13px; height: 13px; flex-shrink: 0;
   margin-top: 2px; cursor: pointer; accent-color: var(--black);
 }
 
@@ -886,7 +906,7 @@ a   { color: inherit; text-decoration: none; }
    ============================================= */
 
 .footer {
-  background: var(--accent);
+  background: var(--black);
   border-top: 1.5px solid var(--black);
   padding: 52px 0 0;
 }
@@ -899,24 +919,24 @@ a   { color: inherit; text-decoration: none; }
 }
 
 .footer__brand { display: flex; flex-direction: column; gap: 14px; }
-.footer__logo img { height: 26px; }
+.footer__logo img { height: 26px; filter: invert(1); }
 
 .footer__tagline {
   font-size: 11px; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
-  color: rgba(0,0,0,0.35);
+  color: rgba(255,255,255,0.35);
 }
 
 .footer__contact { display: flex; flex-direction: column; gap: 3px; }
 .footer__contact a {
-  font-size: 14px; color: var(--black);
+  font-size: 14px; color: var(--white);
   opacity: 0.6; transition: opacity 0.15s;
 }
 .footer__contact a:hover { opacity: 1; }
 
 .footer__social { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; }
 .footer__social a {
-  font-size: 13px; color: var(--black);
+  font-size: 13px; color: var(--white);
   opacity: 0.4; transition: opacity 0.15s;
 }
 .footer__social a:hover { opacity: 0.85; }
@@ -924,23 +944,23 @@ a   { color: inherit; text-decoration: none; }
 .footer__col-heading {
   font-size: 11px; font-weight: 700;
   letter-spacing: 0.1em; text-transform: uppercase;
-  color: rgba(0,0,0,0.3); margin-bottom: 12px;
+  color: rgba(255,255,255,0.3); margin-bottom: 12px;
 }
 
 .footer__link {
   display: block; font-size: 14px;
-  color: var(--black); opacity: 0.55;
+  color: var(--white); opacity: 0.55;
   padding: 3px 0; transition: opacity 0.15s;
 }
 .footer__link:hover { opacity: 1; }
 
 .footer__bottom {
-  border-top: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid rgba(255,255,255,0.1);
   padding-top: 16px; padding-bottom: 18px;
   display: flex; justify-content: space-between; align-items: center;
 }
-.footer__copy { font-size: 12px; color: rgba(0,0,0,0.3); }
-a.footer__copy:hover { color: var(--black); }
+.footer__copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+a.footer__copy:hover { color: var(--white); }
 
 /* =============================================
    IN PROGRESS PAGE
