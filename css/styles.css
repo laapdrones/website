@@ -85,7 +85,7 @@ a   { color: inherit; text-decoration: none; }
 }
 
 .nav__logo img {
-  height: 48px;
+  height: 40px;
   display: block;
   flex-shrink: 0;
 }
