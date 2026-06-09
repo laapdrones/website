@@ -65,6 +65,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* --- Realizacje slider --- */
+  const slider   = document.getElementById('realizacje-slider');
+  const btnPrev  = document.getElementById('realizacje-prev');
+  const btnNext  = document.getElementById('realizacje-next');
+
+  if (slider && btnPrev && btnNext) {
+    let sliderIndex = 0;
+
+    function getCardWidth() {
+      const card = slider.querySelector('.realizacje-card');
+      if (!card) return 356;
+      return card.offsetWidth + 16; // card width + gap
+    }
+
+    function updateSlider() {
+      const offset = sliderIndex * getCardWidth();
+      slider.style.transform = `translateX(-${offset}px)`;
+    }
+
+    btnNext.addEventListener('click', () => {
+      const total = slider.querySelectorAll('.realizacje-card').length;
+      const visible = Math.floor(slider.parentElement.offsetWidth / getCardWidth());
+      if (sliderIndex < total - visible) {
+        sliderIndex++;
+        updateSlider();
+      }
+    });
+
+    btnPrev.addEventListener('click', () => {
+      if (sliderIndex > 0) {
+        sliderIndex--;
+        updateSlider();
+      }
+    });
+  }
+
   /* --- Active nav link --- */
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav__links a, .nav__dropdown-menu a').forEach(link => {
