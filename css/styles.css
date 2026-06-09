@@ -693,9 +693,10 @@ a   { color: inherit; text-decoration: none; }
   margin-top: 80px;
   background: var(--white);
   background-image:
-    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
-  background-size: 40px 40px;
+    radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.035) 1px, transparent 1px);
+  background-size: 20px 20px, 80px 80px, 80px 80px;
   border-top: 1px solid rgba(0,0,0,0.12);
   padding: 80px 0;
   color: var(--black);
@@ -793,9 +794,10 @@ a   { color: inherit; text-decoration: none; }
   padding: 80px 0;
   background: var(--white);
   background-image:
-    linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+    radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.028) 1px, transparent 1px);
+  background-size: 20px 20px, 80px 80px, 80px 80px;
   border-top: 1px solid rgba(0,0,0,0.12);
 }
 
@@ -1130,8 +1132,8 @@ a.footer__copy:hover { color: var(--black); }
 
 .fpv-item__label {
   font-family: 'Courier New', monospace;
-  font-size: 10px; font-weight: 400;
-  letter-spacing: 0.08em; text-transform: uppercase;
+  font-size: 12px; font-weight: 400;
+  letter-spacing: 0.06em; text-transform: uppercase;
   color: var(--black); flex: 1; line-height: 1.45;
 }
 
@@ -1153,6 +1155,68 @@ a.footer__copy:hover { color: var(--black); }
 .fpv-item--more .fpv-item__label { font-weight: 700; }
 .fpv-item--more .fpv-item__plus { color: var(--black); font-size: 15px; font-weight: 600; }
 .fpv-item--more:hover .fpv-item__top { opacity: 0.55; }
+
+/* =============================================
+   GALERIA — abstract collage
+   ============================================= */
+
+.gallery-section { padding: 80px 0 0; border-top: 1px solid var(--border); }
+
+.gallery-header {
+  display: flex; align-items: center;
+  justify-content: space-between; margin-bottom: 20px;
+}
+
+.gallery-anno {
+  font-family: 'Courier New', monospace;
+  font-size: 9px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(0,0,0,0.25);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 220px 240px 190px;
+  gap: 5px;
+}
+
+/* Grid placement */
+.g-a { grid-column: 1 / 6;  grid-row: 1; }
+.g-b { grid-column: 6 / 10; grid-row: 1; }
+.g-c { grid-column: 10 / 13; grid-row: 1; }
+.g-d { grid-column: 1 / 4;  grid-row: 2; }
+.g-e { grid-column: 4 / 9;  grid-row: 2; }
+.g-f { grid-column: 9 / 13; grid-row: 2; }
+.g-g { grid-column: 1 / 5;  grid-row: 3; }
+.g-h { grid-column: 5 / 13; grid-row: 3; }
+
+.gallery-cell { position: relative; overflow: hidden; background: var(--light); }
+
+.gallery-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: transform 0.6s ease;
+}
+.gallery-cell:hover .gallery-bg { transform: scale(1.04); }
+
+.gallery-fig {
+  position: absolute; top: 8px; left: 10px; z-index: 2;
+  font-family: 'Courier New', monospace;
+  font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+
+.gallery-type {
+  position: absolute; bottom: 8px; left: 10px; z-index: 2;
+  font-family: 'Courier New', monospace;
+  font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+}
+
+.gallery-bbox {
+  position: absolute; z-index: 2; pointer-events: none;
+  border: 1px solid rgba(255, 232, 60, 0.8);
+}
 
 /* =============================================
    ZESPÓŁ
@@ -1217,6 +1281,10 @@ a.footer__copy:hover { color: var(--black); }
   .footer__inner           { grid-template-columns: 1fr 1fr; gap: 40px; }
   .cta-strip__item         { padding: 28px 32px; }
   .services-grid           { grid-template-columns: 1fr; }
+  .gallery-grid            { grid-template-columns: repeat(6, 1fr); grid-template-rows: 180px 160px 160px; }
+  .g-a { grid-column: 1/4; } .g-b { grid-column: 4/7; } .g-c { display: none; }
+  .g-d { grid-column: 1/3; } .g-e { grid-column: 3/7; } .g-f { display: none; }
+  .g-g { grid-column: 1/4; } .g-h { grid-column: 4/7; }
   .service-card,
   .service-card:nth-child(2),
   .service-card:last-child { padding: 36px 0; border-right: none; border-bottom: 1px solid var(--border); }
