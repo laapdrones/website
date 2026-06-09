@@ -244,6 +244,8 @@ a   { color: inherit; text-decoration: none; }
 
 .hero {
   padding: 16px var(--pad-h) 0;
+  max-width: var(--max-w);
+  margin: 0 auto;
 }
 
 /* Wrapper z zaokrąglonymi rogami */
