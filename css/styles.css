@@ -1083,7 +1083,7 @@ a.footer__copy:hover { color: var(--black); }
 .service-card__link:hover { gap: 9px; }
 
 /* =============================================
-   DLACZEGO FPV
+   DLACZEGO FPV — accordion
    ============================================= */
 
 .why-fpv-section {
@@ -1091,52 +1091,68 @@ a.footer__copy:hover { color: var(--black); }
   border-top: 1px solid var(--border);
 }
 
-.why-fpv__body {
+.why-fpv-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.why-fpv-count {
+  font-family: 'Courier New', monospace;
+  font-size: 10px; letter-spacing: 0.14em;
+  color: rgba(0,0,0,0.28);
+}
+
+.why-fpv-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-  margin-top: 36px;
+  gap: 0 60px;
 }
 
-.why-fpv__big {
-  font-size: clamp(20px, 2vw, 28px);
-  font-weight: 400;
-  line-height: 1.55;
-  letter-spacing: -0.3px;
-  color: var(--black);
-  margin-bottom: 20px;
+.fpv-item { border-top: 1px solid var(--border); display: block; }
+.why-fpv-col .fpv-item:last-child { border-bottom: 1px solid var(--border); }
+
+.fpv-item__top {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 0; width: 100%;
+  background: none; border: none; cursor: pointer;
+  text-align: left; font-family: var(--font);
+  transition: opacity 0.15s;
 }
+.fpv-item__top:hover { opacity: 0.65; }
 
-.why-fpv__sub {
-  font-size: 14px;
-  line-height: 1.8;
-  color: var(--gray);
-  max-width: 480px;
-}
-
-.why-fpv__points { display: flex; flex-direction: column; }
-
-.why-fpv__point {
-  display: grid;
-  grid-template-columns: 32px 1fr;
-  gap: 16px;
-  padding: 18px 0;
-  border-top: 1px solid var(--border);
-  align-items: start;
-}
-.why-fpv__point:last-child { border-bottom: 1px solid var(--border); }
-
-.why-fpv__point-id {
+.fpv-item__id {
   font-family: 'Courier New', monospace;
-  font-size: 9px; letter-spacing: 0.1em;
-  color: rgba(0,0,0,0.28); padding-top: 3px;
+  font-size: 8px; letter-spacing: 0.12em;
+  color: rgba(0,0,0,0.22); flex-shrink: 0; width: 42px;
 }
 
-.why-fpv__point p {
-  font-size: 14px; line-height: 1.7;
-  color: var(--gray);
+.fpv-item__label {
+  font-family: 'Courier New', monospace;
+  font-size: 10px; font-weight: 400;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--black); flex: 1; line-height: 1.45;
 }
+
+.fpv-item__plus {
+  font-family: 'Courier New', monospace;
+  font-size: 18px; font-weight: 300;
+  color: rgba(0,0,0,0.3); flex-shrink: 0;
+  transition: transform 0.25s, color 0.15s; line-height: 1;
+}
+.fpv-item__top[aria-expanded="true"] .fpv-item__plus {
+  transform: rotate(45deg); color: var(--black);
+}
+
+.fpv-item__body { display: none; padding: 0 0 16px 56px; }
+.fpv-item__body.open { display: block; }
+.fpv-item__body p { font-size: 13px; line-height: 1.75; color: var(--gray); }
+
+.fpv-item--more { text-decoration: none; color: var(--black); }
+.fpv-item--more .fpv-item__label { font-weight: 700; }
+.fpv-item--more .fpv-item__plus { color: var(--black); font-size: 15px; font-weight: 600; }
+.fpv-item--more:hover .fpv-item__top { opacity: 0.55; }
 
 /* =============================================
    ZESPÓŁ
@@ -1225,7 +1241,7 @@ a.footer__copy:hover { color: var(--black); }
   .footer__inner    { grid-template-columns: 1fr; gap: 32px; }
   .footer__bottom   { flex-direction: column; gap: 8px; }
   .tech-item        { grid-template-columns: 1fr; gap: 6px; }
-  .why-fpv__body    { grid-template-columns: 1fr; gap: 40px; }
+  .why-fpv-grid     { grid-template-columns: 1fr; gap: 0; }
   .team-row         { grid-template-columns: 32px 1fr; gap: 16px; }
   .team-row__role   { display: none; }
 }

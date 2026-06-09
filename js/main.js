@@ -101,6 +101,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* --- FPV accordion --- */
+  document.querySelectorAll('.fpv-item__top[aria-expanded]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      const body = btn.nextElementSibling;
+      if (body) body.classList.toggle('open', !isOpen);
+    });
+  });
+
   /* --- Active nav link --- */
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav__links a, .nav__dropdown-menu a').forEach(link => {
