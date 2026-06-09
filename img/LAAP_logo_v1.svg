@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 166.69 221.89">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: CircularXXTT-Bold, 'CircularXX TT';
+        font-size: 48px;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #231f20;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 8px;
+      }
+
+      .cls-3 {
+        letter-spacing: -.02em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <line class="cls-2" x1="157.73" y1="80.87" x2="101.04" y2="80.87"/>
+      <line class="cls-2" x1="119.3" y1="147.43" x2="90.95" y2="98.34"/>
+      <line class="cls-2" x1="42.43" y1="147.43" x2="70.78" y2="98.34"/>
+      <line class="cls-2" x1="4" y1="80.87" x2="60.69" y2="80.87"/>
+      <line class="cls-2" x1="42.43" y1="14.3" x2="70.78" y2="63.4"/>
+    </g>
+    <circle class="cls-2" cx="105.5" cy="38.2" r="17.01"/>
+    <circle class="cls-2" cx="105.5" cy="38.2" r="2.83"/>
+    <text class="cls-1" transform="translate(18.3 200.25)"><tspan x="0" y="0">LAA</tspan><tspan class="cls-3" x="95.76" y="0">P</tspan></text>
+  </g>
+</svg>
