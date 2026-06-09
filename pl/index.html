@@ -64,13 +64,32 @@
     <section class="hero">
 
       <div class="hero__left">
-        <p class="hero__eyebrow">FPV Engineering</p>
+
+        <!-- HUD annotations -->
+        <div class="hero__hud">
+          <span class="hero__hud-item hero__hud-item--active">52°14'N · 21°01'E</span>
+          <span class="hero__hud-item">ALT: 80–120m AGL</span>
+          <span class="hero__hud-item">MODE: FPV / MANUAL</span>
+        </div>
+
+        <!-- Crosshair -->
+        <svg class="hero__crosshair" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1">
+          <circle cx="10" cy="10" r="3"/>
+          <line x1="10" y1="0" x2="10" y2="6"/>
+          <line x1="10" y1="14" x2="10" y2="20"/>
+          <line x1="0" y1="10" x2="6" y2="10"/>
+          <line x1="14" y1="10" x2="20" y2="10"/>
+        </svg>
+
+        <p class="hero__eyebrow">// FPV Engineering</p>
         <h1 class="hero__title">Latamy tam,<br>gdzie inne drony<br>nie wejdą.</h1>
         <p class="hero__sub">Nagrania FPV wewnątrz budynków i przestrzeni przemysłowych. Budujemy drony pod konkretne zastosowanie.</p>
         <div class="hero__ctas">
           <a class="btn btn--primary" href="realizacje.html">Zobacz realizacje</a>
           <a class="hero__link" href="#kontakt">Skontaktuj się <span>→</span></a>
         </div>
+
+        <span class="hero__vtag">LAAP · POL · EST.2024</span>
       </div>
 
       <div class="hero__right">
@@ -95,7 +114,7 @@
     <!-- ========== USŁUGI ========== -->
     <section class="services-section">
       <div class="inner">
-        <p class="section__eyebrow">Usługi</p>
+        <p class="section__eyebrow">// Usługi</p>
       </div>
       <div class="services-list inner">
 
@@ -105,13 +124,25 @@
             <h3 class="service-row__title">Wideo FPV</h3>
             <p class="service-row__text">Przeloty wewnątrz hal produkcyjnych, magazynów, nieruchomości i obiektów przemysłowych. Małe drony FPV docierają tam, gdzie standardowy sprzęt się nie zmieści.</p>
             <div class="service-process">
-              <span class="process-step">Briefing</span>
-              <span class="process-sep">→</span>
-              <span class="process-step">Ustalenie trasy</span>
-              <span class="process-sep">→</span>
-              <span class="process-step">Dzień nagraniowy</span>
-              <span class="process-sep">→</span>
-              <span class="process-step">Montaż <strong>24h</strong></span>
+              <div class="process-wpt">
+                <span class="process-wpt__id">WPT-01</span>
+                <span class="process-wpt__name">Briefing</span>
+              </div>
+              <span class="process-arrow">——</span>
+              <div class="process-wpt">
+                <span class="process-wpt__id">WPT-02</span>
+                <span class="process-wpt__name">Ustalenie trasy</span>
+              </div>
+              <span class="process-arrow">——</span>
+              <div class="process-wpt">
+                <span class="process-wpt__id">WPT-03</span>
+                <span class="process-wpt__name">Nagranie</span>
+              </div>
+              <span class="process-arrow">——</span>
+              <div class="process-wpt">
+                <span class="process-wpt__id">WPT-04</span>
+                <span class="process-wpt__name">Montaż <strong>[24H]</strong></span>
+              </div>
             </div>
           </div>
           <a class="service-row__link" href="wideo-fpv.html">Dowiedz się więcej <span>→</span></a>
@@ -142,7 +173,7 @@
     <section class="realizacje-section">
       <div class="realizacje-section__header inner">
         <div>
-          <p class="section__eyebrow">Realizacje</p>
+          <p class="section__eyebrow">// Realizacje</p>
           <h2 class="section__title">Wybrane projekty</h2>
         </div>
         <a class="link-arrow" href="realizacje.html">Zobacz wszystkie <span>→</span></a>
@@ -151,42 +182,47 @@
       <div class="realizacje-slider-wrap inner">
         <div class="realizacje-slider" id="realizacje-slider">
           <a class="realizacje-card" href="https://www.youtube.com/watch?v=NHUFCnFE9CM" target="_blank" rel="noopener">
+            <span class="realizacje-card__fig">FIG.01</span>
             <div class="realizacje-card__img" style="background-image: url('../img/hala-produkcyjna-wnetrze-dron-fpv.webp')"></div>
             <div class="realizacje-card__overlay"><div class="realizacje-card__play"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M6 4l12 6-12 6V4z" fill="white"/></svg></div></div>
             <div class="realizacje-card__info">
-              <span class="realizacje-card__cat">Przemysł</span>
+              <span class="realizacje-card__cat">TYPE: INDUSTRIAL</span>
               <span class="realizacje-card__title">Zakład produkcyjny - hala meblarska</span>
             </div>
           </a>
           <a class="realizacje-card" href="https://www.youtube.com/watch?v=FZhiMyzs-Hg" target="_blank" rel="noopener">
+            <span class="realizacje-card__fig">FIG.02</span>
             <div class="realizacje-card__img" style="background-image: url('../img/willa-konstancin-wieczor-dron-fpv.webp')"></div>
             <div class="realizacje-card__overlay"><div class="realizacje-card__play"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M6 4l12 6-12 6V4z" fill="white"/></svg></div></div>
             <div class="realizacje-card__info">
-              <span class="realizacje-card__cat">Nieruchomości premium</span>
+              <span class="realizacje-card__cat">TYPE: RESIDENTIAL · WAW</span>
               <span class="realizacje-card__title">Willa Nike - Konstancin-Jeziorna</span>
             </div>
           </a>
           <a class="realizacje-card" href="https://www.youtube.com/watch?v=5DGWK3Sonq8" target="_blank" rel="noopener">
+            <span class="realizacje-card__fig">FIG.03</span>
             <div class="realizacje-card__img" style="background-image: url('../img/nowoczesny-dom-jadalnia-dron-fpv.webp')"></div>
             <div class="realizacje-card__overlay"><div class="realizacje-card__play"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M6 4l12 6-12 6V4z" fill="white"/></svg></div></div>
             <div class="realizacje-card__info">
-              <span class="realizacje-card__cat">Nieruchomości</span>
+              <span class="realizacje-card__cat">TYPE: RESIDENTIAL · PDL</span>
               <span class="realizacje-card__title">Nowoczesny dom - Podlasie</span>
             </div>
           </a>
           <a class="realizacje-card" href="https://www.youtube.com/watch?v=k88nAQxxVr8" target="_blank" rel="noopener">
+            <span class="realizacje-card__fig">FIG.04</span>
             <div class="realizacje-card__img" style="background-image: url('../img/nowoczesne-wnetrze-salon-schody-dron-fpv.webp')"></div>
             <div class="realizacje-card__overlay"><div class="realizacje-card__play"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M6 4l12 6-12 6V4z" fill="white"/></svg></div></div>
             <div class="realizacje-card__info">
-              <span class="realizacje-card__cat">Nieruchomości premium</span>
+              <span class="realizacje-card__cat">TYPE: RESIDENTIAL · WAW</span>
               <span class="realizacje-card__title">Willa - Konstancin-Jeziorna</span>
             </div>
           </a>
           <a class="realizacje-card" href="https://www.youtube.com/watch?v=g3oddxNIJAg" target="_blank" rel="noopener">
+            <span class="realizacje-card__fig">FIG.05</span>
             <div class="realizacje-card__img" style="background-image: url('../img/willa-konstancin-zewnatrz-dron-fpv.webp')"></div>
             <div class="realizacje-card__overlay"><div class="realizacje-card__play"><svg width="16" height="16" viewBox="0 0 20 20" fill="none"><path d="M6 4l12 6-12 6V4z" fill="white"/></svg></div></div>
             <div class="realizacje-card__info">
-              <span class="realizacje-card__cat">Nieruchomości</span>
+              <span class="realizacje-card__cat">TYPE: RESIDENTIAL · WAW</span>
               <span class="realizacje-card__title">Nowoczesny dom pod Warszawą</span>
             </div>
           </a>
@@ -207,7 +243,7 @@
     <section class="tech-section">
       <div class="tech-section__inner inner">
         <div class="tech-section__header">
-          <p class="section__eyebrow">Technologia</p>
+          <p class="section__eyebrow">// Technologia</p>
           <h2 class="tech-section__title">Budujemy drony,<br>nie tylko nimi latamy.</h2>
           <p class="tech-section__sub">Większość operatorów kupuje gotowy sprzęt z półki. My rozumiemy elektronikę, projektujemy własne konfiguracje i budujemy drony pod konkretne zadanie.</p>
           <a class="link-arrow link-arrow--light" href="technologia.html">Więcej o technologii <span>→</span></a>
@@ -256,7 +292,7 @@
       <div class="contact-section__inner inner">
 
         <div class="contact-section__left">
-          <p class="section__eyebrow">Kontakt</p>
+          <p class="section__eyebrow">// Kontakt</p>
           <h2 class="contact-section__title">Omów<br>projekt</h2>
           <p class="contact-section__sub">Opisz co potrzebujesz. Odpiszemy w ciągu 24 godzin.</p>
           <div class="contact-details">
