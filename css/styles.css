@@ -347,11 +347,12 @@ a   { color: inherit; text-decoration: none; }
 /* Sub-hero strip */
 .hero__sub-strip {
   background: var(--bg);
-  padding: 24px var(--pad-h);
+  padding: 24px 0;
 }
 .hero__sub-strip__inner {
   max-width: var(--max-w);
   margin: 0 auto;
+  padding: 0 var(--pad-h);
 }
 .hero__sub-strip__text {
   font-size: 15px;
