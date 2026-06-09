@@ -60,20 +60,17 @@
 
   <div class="page-content">
 
-    <!-- ========== HERO — split ========== -->
+    <!-- ========== HERO ========== -->
     <section class="hero">
 
-      <div class="hero__left">
+      <div class="hero__main">
 
-        <!-- HUD annotations -->
-        <div class="hero__hud">
-          <span class="hero__hud-item hero__hud-item--active">52°14'N · 21°01'E</span>
-          <span class="hero__hud-item">ALT: 80–120m AGL</span>
-          <span class="hero__hud-item">MODE: FPV / MANUAL</span>
-        </div>
+        <!-- Corner annotations — real data -->
+        <span class="hero__anno hero__anno--tl">// FPV-OPS · WAW</span>
+        <span class="hero__anno hero__anno--tr">52°13'N · 21°00'E<br>FREQ: 5.8 GHz · A1/A3</span>
 
         <!-- Crosshair -->
-        <svg class="hero__crosshair" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1">
+        <svg class="hero__crosshair" viewBox="0 0 20 20" fill="none" stroke="black" stroke-width="1">
           <circle cx="10" cy="10" r="3"/>
           <line x1="10" y1="0" x2="10" y2="6"/>
           <line x1="10" y1="14" x2="10" y2="20"/>
@@ -81,31 +78,84 @@
           <line x1="14" y1="10" x2="20" y2="10"/>
         </svg>
 
-        <p class="hero__eyebrow">// FPV Engineering</p>
-        <h1 class="hero__title">Latamy tam,<br>gdzie inne drony<br>nie wejdą.</h1>
-        <p class="hero__sub">Nagrania FPV wewnątrz budynków i przestrzeni przemysłowych. Budujemy drony pod konkretne zastosowanie.</p>
+        <p class="hero__eyebrow">LAAP · FPV Engineering · EST. 2024</p>
+
+        <h1 class="hero__title">Latamy tam,<br>gdzie inne<br>drony nie wejdą.</h1>
+
+        <p class="hero__sub">Nagrania FPV wewnątrz budynków i przestrzeni przemysłowych.<br>Budujemy drony pod konkretne zastosowanie.</p>
+
         <div class="hero__ctas">
           <a class="btn btn--primary" href="realizacje.html">Zobacz realizacje</a>
-          <a class="hero__link" href="#kontakt">Skontaktuj się <span>→</span></a>
+          <a class="hero__link" href="#kontakt">[ Skontaktuj się ——› ]</a>
         </div>
 
-        <span class="hero__vtag">LAAP · POL · EST.2024</span>
+        <!-- Bottom technical line -->
+        <div class="hero__techline">
+          <span>MAX ALT: 120m AGL · POL</span>
+          <span>INDOOR FPV · OUTDOOR FPV · CUSTOM BUILD</span>
+          <span>WARSAW, POLAND</span>
+        </div>
+
       </div>
 
-      <div class="hero__right">
-        <div class="hero__slides">
-          <div class="hero__slide active" style="background-image: url('../img/hala-produkcyjna-wnetrze-dron-fpv.webp')"></div>
-          <div class="hero__slide" style="background-image: url('../img/willa-konstancin-wieczor-dron-fpv.webp')"></div>
-          <div class="hero__slide" style="background-image: url('../img/nowoczesne-wnetrze-salon-schody-dron-fpv.webp')"></div>
-          <div class="hero__slide" style="background-image: url('../img/willa-konstancin-zewnatrz-dron-fpv.webp')"></div>
-          <div class="hero__slide" style="background-image: url('../img/nowoczesny-dom-jadalnia-dron-fpv.webp')"></div>
+      <!-- Realizacje strip — scrollable -->
+      <div class="hero__realizacje">
+        <div class="hero__real-header">
+          <span class="hero__real-label">// Ostatnie realizacje</span>
+          <a class="hero__real-link" href="realizacje.html">[ ⊕ Wszystkie realizacje ——› ]</a>
         </div>
-        <div class="hero__dots">
-          <button class="hero__dot active" data-index="0"></button>
-          <button class="hero__dot" data-index="1"></button>
-          <button class="hero__dot" data-index="2"></button>
-          <button class="hero__dot" data-index="3"></button>
-          <button class="hero__dot" data-index="4"></button>
+        <div class="hero__real-scroll" id="hero-real-scroll">
+
+          <a class="hero__real-card" href="https://www.youtube.com/watch?v=NHUFCnFE9CM" target="_blank" rel="noopener">
+            <div class="hero__real-card__fig">FIG.01</div>
+            <div class="hero__real-card__img" style="background-image: url('../img/hala-produkcyjna-wnetrze-dron-fpv.webp')"></div>
+            <div class="hero__real-card__overlay"></div>
+            <div class="hero__real-card__info">
+              <span class="hero__real-card__type">Industrial · WAW · 2024</span>
+              <span class="hero__real-card__title">Zakład produkcyjny - hala meblarska</span>
+            </div>
+          </a>
+
+          <a class="hero__real-card" href="https://www.youtube.com/watch?v=FZhiMyzs-Hg" target="_blank" rel="noopener">
+            <div class="hero__real-card__fig">FIG.02</div>
+            <div class="hero__real-card__img" style="background-image: url('../img/willa-konstancin-wieczor-dron-fpv.webp')"></div>
+            <div class="hero__real-card__overlay"></div>
+            <div class="hero__real-card__info">
+              <span class="hero__real-card__type">Residential Premium · WAW · 2024</span>
+              <span class="hero__real-card__title">Willa Nike - Konstancin-Jeziorna</span>
+            </div>
+          </a>
+
+          <a class="hero__real-card" href="https://www.youtube.com/watch?v=5DGWK3Sonq8" target="_blank" rel="noopener">
+            <div class="hero__real-card__fig">FIG.03</div>
+            <div class="hero__real-card__img" style="background-image: url('../img/nowoczesny-dom-jadalnia-dron-fpv.webp')"></div>
+            <div class="hero__real-card__overlay"></div>
+            <div class="hero__real-card__info">
+              <span class="hero__real-card__type">Residential · PDL · 2024</span>
+              <span class="hero__real-card__title">Nowoczesny dom - Podlasie</span>
+            </div>
+          </a>
+
+          <a class="hero__real-card" href="https://www.youtube.com/watch?v=k88nAQxxVr8" target="_blank" rel="noopener">
+            <div class="hero__real-card__fig">FIG.04</div>
+            <div class="hero__real-card__img" style="background-image: url('../img/nowoczesne-wnetrze-salon-schody-dron-fpv.webp')"></div>
+            <div class="hero__real-card__overlay"></div>
+            <div class="hero__real-card__info">
+              <span class="hero__real-card__type">Residential Premium · WAW · 2024</span>
+              <span class="hero__real-card__title">Willa - Konstancin-Jeziorna</span>
+            </div>
+          </a>
+
+          <a class="hero__real-card" href="https://www.youtube.com/watch?v=g3oddxNIJAg" target="_blank" rel="noopener">
+            <div class="hero__real-card__fig">FIG.05</div>
+            <div class="hero__real-card__img" style="background-image: url('../img/willa-konstancin-zewnatrz-dron-fpv.webp')"></div>
+            <div class="hero__real-card__overlay"></div>
+            <div class="hero__real-card__info">
+              <span class="hero__real-card__type">Residential · WAW · 2024</span>
+              <span class="hero__real-card__title">Nowoczesny dom pod Warszawą</span>
+            </div>
+          </a>
+
         </div>
       </div>
 
