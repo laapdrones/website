@@ -1087,7 +1087,7 @@ a.footer__copy:hover { color: var(--black); }
 .service-card__link:hover { gap: 9px; }
 
 /* =============================================
-   DLACZEGO FPV — accordion
+   DLACZEGO FPV — USP 4 kolumny
    ============================================= */
 
 .why-fpv-section {
@@ -1099,64 +1099,44 @@ a.footer__copy:hover { color: var(--black); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
-.why-fpv-count {
-  font-family: 'Courier New', monospace;
-  font-size: 10px; letter-spacing: 0.14em;
-  color: rgba(0,0,0,0.28);
-}
-
-.why-fpv-grid {
+.usp-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 60px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 48px;
 }
 
-.fpv-item { border-top: 1px solid var(--border); display: block; }
-.why-fpv-col .fpv-item:last-child { border-bottom: 1px solid var(--border); }
-
-.fpv-item__top {
-  display: flex; align-items: center; gap: 14px;
-  padding: 14px 0; width: 100%;
-  background: none; border: none; cursor: pointer;
-  text-align: left; font-family: var(--font);
-  transition: opacity 0.15s;
+.usp-col__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.18);
+  margin-bottom: 0;
 }
-.fpv-item__top:hover { opacity: 0.65; }
 
-.fpv-item__id {
+.usp-col__title {
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--black);
+}
+
+.usp-col__sym {
   font-family: 'Courier New', monospace;
-  font-size: 8px; letter-spacing: 0.12em;
-  color: rgba(0,0,0,0.22); flex-shrink: 0; width: 42px;
+  font-size: 11px; color: rgba(0,0,0,0.35);
 }
 
-.fpv-item__label {
+.usp-item {
   font-family: 'Courier New', monospace;
-  font-size: 12px; font-weight: 400;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--black); flex: 1; line-height: 1.45;
+  font-size: 10px; letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.6);
+  padding: 11px 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.45;
 }
-
-.fpv-item__plus {
-  font-family: 'Courier New', monospace;
-  font-size: 18px; font-weight: 300;
-  color: rgba(0,0,0,0.3); flex-shrink: 0;
-  transition: transform 0.25s, color 0.15s; line-height: 1;
-}
-.fpv-item__top[aria-expanded="true"] .fpv-item__plus {
-  transform: rotate(45deg); color: var(--black);
-}
-
-.fpv-item__body { display: none; padding: 0 0 16px 56px; }
-.fpv-item__body.open { display: block; }
-.fpv-item__body p { font-size: 13px; line-height: 1.75; color: var(--gray); }
-
-.fpv-item--more { text-decoration: none; color: var(--black); }
-.fpv-item--more .fpv-item__label { font-weight: 700; }
-.fpv-item--more .fpv-item__plus { color: var(--black); font-size: 15px; font-weight: 600; }
-.fpv-item--more:hover .fpv-item__top { opacity: 0.55; }
 
 /* =============================================
    GALERIA — abstract collage
@@ -1311,7 +1291,7 @@ a.footer__copy:hover { color: var(--black); }
   .footer__inner    { grid-template-columns: 1fr; gap: 32px; }
   .footer__bottom   { flex-direction: column; gap: 8px; }
   .tech-item        { grid-template-columns: 1fr; gap: 6px; }
-  .why-fpv-grid     { grid-template-columns: 1fr; gap: 0; }
+  .usp-grid         { grid-template-columns: repeat(2, 1fr); gap: 40px 40px; }
   .team-row         { grid-template-columns: 32px 1fr; gap: 16px; }
   .team-row__role   { display: none; }
 }
