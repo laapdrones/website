@@ -1118,24 +1118,24 @@ a.footer__copy:hover { color: var(--black); }
 }
 
 .usp-col__title {
-  font-size: 13px; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
+  font-size: 16px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--black);
 }
 
 .usp-col__sym {
   font-family: 'Courier New', monospace;
-  font-size: 11px; color: rgba(0,0,0,0.35);
+  font-size: 13px; color: rgba(0,0,0,0.3);
 }
 
 .usp-item {
   font-family: 'Courier New', monospace;
-  font-size: 10px; letter-spacing: 0.06em;
+  font-size: 12px; letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: rgba(0,0,0,0.6);
-  padding: 11px 0;
+  color: rgba(0,0,0,0.72);
+  padding: 15px 0;
   border-bottom: 1px solid var(--border);
-  line-height: 1.45;
+  line-height: 1.4;
 }
 
 /* =============================================
