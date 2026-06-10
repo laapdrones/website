@@ -27,7 +27,7 @@
 :root {
   --black:      #000000;
   --white:      #ffffff;
-  --bg:         #ffffff;
+  --bg:         #FFFAE1;
   --accent:     #FFF3BC;
   --gray:       #6b6b6b;
   --light:      #f5f5f3;
@@ -211,7 +211,7 @@ a   { color: inherit; text-decoration: none; }
   min-height: calc(100vh - var(--nav-height));
   display: grid;
   grid-template-rows: 1fr auto;
-  background: var(--white);
+  background: var(--bg);
   background-image: radial-gradient(circle, rgba(0,0,0,0.055) 1px, transparent 1px);
   background-size: 28px 28px;
 }
@@ -693,7 +693,7 @@ a   { color: inherit; text-decoration: none; }
 
 .tech-section {
   margin-top: 80px;
-  background: var(--white);
+  background: var(--bg);
   background-image:
     radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px),
     linear-gradient(rgba(0,0,0,0.035) 1px, transparent 1px),
@@ -794,7 +794,7 @@ a   { color: inherit; text-decoration: none; }
 
 .contact-section {
   padding: 80px 0;
-  background: var(--white);
+  background: var(--bg);
   background-image:
     radial-gradient(circle, rgba(0,0,0,0.06) 1px, transparent 1px),
     linear-gradient(rgba(0,0,0,0.028) 1px, transparent 1px),
