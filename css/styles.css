@@ -1589,6 +1589,43 @@ a.footer__copy:hover { color: var(--black); }
    BLOG — homepage strip, listing page, post page
    ============================================= */
 
+/* Blog listing page */
+.blog-page-header {
+  padding: 48px 0 0;
+  position: relative;
+}
+.blog-page-header__inner {
+  border-top: 1.5px solid var(--black);
+  padding-top: 24px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 32px;
+}
+.blog-page-header__title {
+  font-size: clamp(36px, 6vw, 80px);
+  font-weight: 500;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+.blog-page-header__sub {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(0,0,0,0.4);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.blog-page-grid {
+  padding: 40px 0 80px;
+}
+
+.blog-strip--page {
+  border-top: 1px solid var(--border);
+  padding-top: 40px;
+}
+
 /* Homepage blog strip */
 .blog-section {
   padding: 64px 0;
@@ -1851,6 +1888,8 @@ a.footer__copy:hover { color: var(--black); }
 @media (max-width: 900px) {
   :root { --pad-h: 24px; }
   .blog-strip      { grid-template-columns: 1fr; gap: 40px; }
+  .blog-page-header__inner { flex-direction: column; gap: 12px; }
+  .blog-page-header__sub   { white-space: normal; }
   .nav__links      { display: none; }
   .nav__cta        { display: none; }
   .nav__hamburger  { display: flex; }
